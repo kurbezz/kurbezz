@@ -1,3 +1,7 @@
+<script setup>
+document.title = "Bulat Kurbanov - Backend Developer";
+</script>
+
 <template>
   <div class="app">
     <div class="header">
@@ -11,9 +15,9 @@
         <div class="profession">Backend Developer</div>
 
         <div class="email">
-          <a href="mailto:kurbanovbul@gmail.com">
+          <a href="mailto:me@kurbezz.me">
             <img src="~public/icons/mail.svg" alt="email"/>
-            <div>kurbanovbul@gmail.com</div>
+            <div>me@kurbezz.me</div>
           </a>
         </div>
 
