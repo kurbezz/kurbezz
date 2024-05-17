@@ -40,7 +40,7 @@ if (process.browser) {
     <div>
       <h2>About me</h2>
       <div>
-        I am a backend developer with 5 years of experience in web development.
+        I am a backend developer with 7 years of experience in web development.
         <br>
         I have experience in developing RESTful APIs, working with databases, and writing tests.
         <br>
