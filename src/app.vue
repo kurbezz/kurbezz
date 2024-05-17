@@ -3,7 +3,7 @@
 
     <div class="header">
       <div class="photo-wrapper">
-        <img class="photo" src="public/avatar.png" alt="avatar"/>
+        <img class="photo" src="public/avatar.jpg" alt="avatar"/>
       </div>
 
       <div class="name-and-social">
