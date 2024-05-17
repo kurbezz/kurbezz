@@ -1,15 +1,16 @@
 {
-    "name": "hello-world",
-    "private": true,
-    "scripts": {
-      "dev": "nuxi dev",
-      "build": "nuxi build",
-      "generate": "nuxi generate",
-      "preview": "nuxi preview",
-      "start": "node .output/server/index.mjs"
-    },
-    "devDependencies": {
-      "@nuxt/examples-ui": "latest",
-      "nuxt": "^3.11.2"
-    }
+  "name": "hello-world",
+  "private": true,
+  "scripts": {
+    "dev": "NUXT_HOST=0.0.0.0 nuxi dev",
+    "build": "nuxi build",
+    "generate": "nuxi generate",
+    "preview": "nuxi preview",
+    "start": "node .output/server/index.mjs"
+  },
+  "devDependencies": {
+    "@nuxt/examples-ui": "latest",
+    "@nuxtjs/svg": "^0.4.1",
+    "nuxt": "^3.11.2"
   }
+}
