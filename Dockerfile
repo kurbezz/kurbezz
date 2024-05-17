@@ -1,14 +1,29 @@
-FROM node:lts
+# syntax = docker/dockerfile:1
 
-WORKDIR /app
+FROM node:lts-slim AS base
 
-COPY ./src/package*.json ./
+ARG PORT=3000
 
-RUN npm install
+ENV NODE_ENV=production
 
-COPY ./src .
+WORKDIR /src
 
-EXPOSE 3000
+# Build
+FROM base AS build
+
+COPY --link ./src/package*.json ./
+RUN npm install --production=false
+
+COPY --link ./src .
 
 RUN npm run build
-CMD [ "npm", "run", "start" ]
+RUN npm prune
+
+# Run
+FROM base
+
+ENV PORT=$PORT
+
+COPY --from=build /src/.output /src/.output
+
+CMD [ "node", ".output/server/index.mjs" ]
