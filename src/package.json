@@ -5,7 +5,8 @@
       "dev": "nuxi dev",
       "build": "nuxi build",
       "generate": "nuxi generate",
-      "start": "nuxi preview"
+      "preview": "nuxi preview",
+      "start": "node .output/server/index.mjs"
     },
     "devDependencies": {
       "@nuxt/examples-ui": "latest",
