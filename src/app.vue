@@ -212,6 +212,12 @@ if (process.browser) {
   align-self: center;
 }
 
+@media only screen and (max-width: 600px) {
+  .photo-wrapper  {
+    margin: auto;
+  }
+}
+
 
 .photo {
   width: 200px;
