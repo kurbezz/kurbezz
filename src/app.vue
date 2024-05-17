@@ -1,6 +1,5 @@
 <template>
   <div class="app">
-
     <div class="header">
       <div class="photo-wrapper">
         <img class="photo" src="public/avatar.jpg" alt="avatar"/>
@@ -186,6 +185,8 @@
   display: flex;
   flex-direction: column;
   padding: 4em;
+  max-width: 800px;
+  margin: auto;
 }
 
 @media only screen and (max-width: 600px) {
@@ -198,7 +199,7 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .photo-wrapper {
