@@ -1,5 +1,7 @@
 <script setup>
-document.title = "Bulat Kurbanov - Backend Developer";
+if (process.browser) {
+  document.title = "Bulat Kurbanov - Backend Developer";
+}
 </script>
 
 <template>
