@@ -1,11 +1,33 @@
 <script setup>
+import { ref } from "vue";
+
+let darkMode = ref(false);
+
 if (process.browser) {
   document.title = "Bulat Kurbanov - Backend Developer";
+
+  if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+    document.body.classList.add("dark-mode");
+    darkMode.value = true;
+  } else {
+    document.body.classList.add("light-mode");
+  }
+}
+
+function switchTheme() {
+  darkMode.value = !darkMode.value;
+
+  document.body.classList.toggle("light-mode");
+  document.body.classList.toggle("dark-mode");
 }
 </script>
 
 <template>
   <div class="app">
+    <div class="light-switcher" @click="switchTheme">
+      <img v-show="darkMode" src="/public/icons/moon.svg" alt="light switcher darn on" style="width: 100%; border-radius: 10px;"/>
+      <img v-show="!darkMode" src="/public/icons/sun.svg" alt="light swither dark off" style="width: 100%; border-radius: 10px;">
+    </div>
     <div class="header">
       <div class="photo-wrapper">
         <img class="photo" src="public/avatar.jpg" alt="avatar"/>
@@ -18,20 +40,24 @@ if (process.browser) {
 
         <div class="email">
           <a href="mailto:me@kurbezz.me">
-            <img src="~public/icons/mail.svg" alt="email"/>
+            <img v-show="darkMode" src="public/icons/mail-dark.svg" alt="email"/>
+            <img v-show="!darkMode" src="public/icons/mail.svg" alt="email"/>
             <div>me@kurbezz.me</div>
           </a>
         </div>
 
         <div class="social-links">
           <a href="https://t.me/kurbezz">
-            <img src="~public/icons/telegram.svg" alt="telegram"/>
+            <img v-show="darkMode" src="~public/icons/telegram-dark.svg" alt="telegram"/>
+            <img v-show="!darkMode" src="~public/icons/telegram.svg" alt="telegram"/>
           </a>
           <a href="https://github.com/kurbezz">
-            <img src="~public/icons/github.svg" alt="github"/>
+            <img v-show="darkMode" src="~public/icons/github-dark.svg" alt="github"/>
+            <img v-show="!darkMode" src="~public/icons/github.svg" alt="github"/>
           </a>
           <a href="https://www.linkedin.com/in/bulat-kurbanov-1089ab146/">
-            <img src="~public/icons/linkedin.svg" alt="linkedin"/>
+            <img v-show="darkMode" src="~public/icons/linkedin-dark.svg" alt="linkedin"/>
+            <img v-show="!darkMode" src="~public/icons/linkedin.svg" alt="linkedin"/>
           </a>
         </div>
       </div>
@@ -186,7 +212,21 @@ if (process.browser) {
   </div>
 </template>
 
+<style global>
+.dark-mode {
+  background-color: black;
+  color: white;
+}
+</style>
+
 <style scoped>
+
+
+body {
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
+}
+
 .app {
   display: flex;
   flex-direction: column;
@@ -260,7 +300,12 @@ if (process.browser) {
 
 .email > a > div {
   font-size: 1.5em;
+
   color: black;
+
+  .dark-mode & {
+    color: white;
+  }
 }
 
 .email > a > img {
@@ -302,6 +347,10 @@ ul {
 hr {
   border: 1px solid #dfdfdf;
   height: 0;
+
+  .dark-mode & {
+    border-color: #333;
+  }
 }
 
 .skill {
@@ -311,5 +360,27 @@ hr {
 
 h2 {
   margin-bottom: 0.4em;
+}
+
+.light-switcher {
+  position: fixed;
+  top: 1em;
+  right: 1em;
+  padding: 0.3em;
+  z-index: 1000;
+  width: 20px;
+  cursor: pointer;
+
+  .moon {
+    display: none;
+  }
+
+  .dark-mode & .moon {
+    display: block;
+  }
+
+  .dark-mode & .sun {
+    display: none;
+  }
 }
 </style>
