@@ -296,10 +296,11 @@ body {
   width: 200px;
   height: 200px;
   border-radius: 50%;
+  padding-right: 1em;
 }
 
 .name-and-social {
-  padding: 3em 3em 3em 5em;
+  padding: 2em 3em 3em 5em;
   display: flex;
   flex-direction: column;
 }
