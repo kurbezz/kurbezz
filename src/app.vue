@@ -242,6 +242,48 @@ function switchTheme() {
         <br>
         <span><strong>Result:</strong> Improved the quality of life for people with diabetes.</span>
       </div>
+
+      <br>
+
+      <div>
+        <strong>Internal Logistic Management System</strong>
+        <br>
+        <strong>CS GROUP</strong>
+        <br>
+        <span><strong>Description:</strong> Developed a system for automating internal logistics within the company. The system allows tracking order status, managing warehouse inventory, and handling accounting.</span>
+        <br>
+        <span><strong>Technologies:</strong> Django, DRF, Vue, PostgreSQL</span>
+        <br>
+        <span><strong>Result:</strong> Reduced order processing time, improved reporting, and enhanced inventory control.</span>
+      </div>
+
+      <br>
+
+      <div>
+        <strong>Mobile Application for Drivers</strong>
+        <br>
+        <strong>CS GROUP</strong>
+        <br>
+        <span><strong>Description:</strong> Developed a mobile application for drivers to manage routes and order statuses.</span>
+        <br>
+        <span><strong>Technologies:</strong> Flutter, Dart</span>
+        <br>
+        <span><strong>Result:</strong> Automated the process of managing order statuses and routes within the company.</span>
+      </div>
+
+      <br>
+
+      <div>
+        <strong>Internal Order Managment System</strong>
+        <br>
+        <strong>Zarnitza</strong>
+        <br>
+        <span><strong>Description:</strong> Developed a system for managing orders and sales.</span>
+        <br>
+        <span><strong>Technologies:</strong> Django, PostgreSQL</span>
+        <br>
+        <span><strong>Result:</strong> Reduced the number of late order shipments by 30%.</span>
+      </div>
     </div>
   </div>
 </template>
