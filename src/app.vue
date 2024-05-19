@@ -238,7 +238,7 @@ function switchTheme() {
         <br>
         <span><strong>Description:</strong>Developed an application and backend for managing an insulin pump based on the <a href="https://openaps.org/">OpenAPS</a> project.</span>
         <br>
-        <span><strong>Technologies:</strong> Flask, Android, Kotlin</span>
+        <span><strong>Technologies:</strong> Flask, Java, Kotlin</span>
         <br>
         <span><strong>Result:</strong> Improved the quality of life for people with diabetes.</span>
       </div>
