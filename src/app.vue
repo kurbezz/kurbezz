@@ -65,13 +65,7 @@ function switchTheme() {
 
     <div>
       <h2>About me</h2>
-      <div>
-        I am a backend developer with 7 years of experience in web development.
-        <br>
-        I have experience in developing RESTful APIs, working with databases, and writing tests.
-        <br>
-        Dedicated to continuous self-improvement and the pursuit of knowledge, while also actively participating in open-source contributions.
-      </div>
+      Backend Developer with 7 years of experience in web development, specializing in RESTful APIs, database management, and test-driven development. Committed to continuous self-improvement and active open-source contributor.
     </div>
     <br>
     <div>
@@ -87,10 +81,10 @@ function switchTheme() {
         <br>
         <span class="text-large">Responsibilities:</span>
         <ul>
-          <li>Developed services using Django and FastAPI</li>
-          <li>Worked with PostgreSQL, Redis, RabbitMQ, Docker, Amazon Web Services (AWS)</li>
-          <li>Wrote library using Rust</li>
-          <li>Wrote unit and integration tests using Pytest</li>
+          <li>Developed services using Django and FastAPI.</li>
+          <li>Worked with PostgreSQL, Redis, RabbitMQ, Docker, and Amazon Web Services (AWS).</li>
+          <li>Authored a library using Rust.</li>
+          <li>Wrote unit and integration tests using Pytest.</li>
         </ul>
       </div>
       <br>
@@ -109,7 +103,7 @@ function switchTheme() {
         <br>
         <span class="text-large">Responsibilities:</span>
         <ul>
-          <li>Performed planning, mentoring, and code reviews.</li>
+          <li>Led planning, mentoring, and code reviews.</li>
           <li>Managed and streamlined software development, testing, and deployment processes.</li>
         </ul>
 
@@ -122,12 +116,12 @@ function switchTheme() {
         <br>
         <span class="text-large">Responsibilities:</span>
         <ul>
-          <li>Developed backend services using Django and Django REST framework</li>
-          <li>Developed fronend using Vue</li>
-          <li>Developed mobile application using Flutter, Dart</li>
-          <li>Implemented automated CI/CD using GitLab CI/CD and Github Actions.</li>
-          <li>Worked with PostgreSQL, Redis, RabbitMQ, Docker</li>
-          <li>Wrote unit and integration tests using Pytest</li>
+          <li>Developed backend services using Django and Django REST Framework.</li>
+          <li>Created frontend components with Vue.js.</li>
+          <li>Built a mobile application using Flutter and Dart.</li>
+          <li>Implemented automated CI/CD pipelines using GitLab CI/CD and GitHub Actions.</li>
+          <li>Utilized PostgreSQL, Redis, RabbitMQ, and Docker.</li>
+          <li>Wrote unit and integration tests using Pytest.</li>
         </ul>
       </div>
       <br>
@@ -144,8 +138,8 @@ function switchTheme() {
         <br>
         <span class="text-large">Responsibilities:</span>
         <ul>
-          <li>Developed backend services using Django and Django REST framework</li>
-          <li>Worked with PostgreSQL</li>
+          <li>Developed backend services using Django and Django REST Framework.</li>
+          <li>Worked with PostgreSQL.</li>
         </ul>
       </div>
       <br>
@@ -162,8 +156,8 @@ function switchTheme() {
         <br>
         <span class="text-large">Responsibilities:</span>
         <ul>
-          <li>Developed backend service using Flask</li>
-          <li>Developed androind application</li>
+          <li>Developed backend services using Flask.</li>
+          <li>Created an Android application.</li>
         </ul>
       </div>
       <br>
@@ -183,31 +177,41 @@ function switchTheme() {
         <strong class="text-small">Grade: Incompleted</strong>
       </div>
     </div>
-<br>
+    <br>
     <div>
-      <h2>Skills</h2>
-
-      <div class="skill">Python</div>
-      <div class="skill">·</div>
-      <div class="skill">Django</div>
-      <div class="skill">·</div>
-      <div class="skill">Django REST Framework (DRF)</div>
-      <div class="skill">·</div>
-      <div class="skill">FastAPI</div>
-      <div class="skill">·</div>
-      <div class="skill">Pytest</div>
-      <div class="skill">·</div>
-      <div class="skill">PostgreSQL</div>
-      <div class="skill">·</div>
-      <div class="skill">Redis</div>
-      <div class="skill">·</div>
-      <div class="skill">RabbitMQ</div>
-      <div class="skill">·</div>
-      <div class="skill">Docker</div>
-      <div class="skill">·</div>
-      <div class="skill">Amazon Web Services (AWS)</div>
-      <div class="skill">·</div>
-      <div class="skill">Rust</div>
+      <h2>Technologies and Tools</h2>
+      <div>
+        <strong>Programming Languages:</strong>
+        Python (Expert), Rust (Beginner)
+      </div>
+      <div>
+        <strong>Frameworks:</strong>
+        Django (Expert), Django REST Framework (DRF) (Advanced), FastAPI (Advanced)
+      </div>
+      <div>
+        <strong>Testing:</strong>
+        Pytest (Advanced)
+      </div>
+      <div>
+        <strong>Databases:</strong>
+        PostgreSQL (Advanced), Redis (Intermediate)
+      </div>
+      <div>
+        <strong>Messaging and Queues:</strong>
+        RabbitMQ (Intermediate)
+      </div>
+      <div>
+        <strong>Containerization and Orchestration:</strong>
+        Docker (Advanced), Docker Swarm (Intermediate)
+      </div>
+      <div>
+        <strong>Cloud Technologies:</strong>
+        Amazon Web Services (AWS) (Intermediate)
+      </div>
+      <div>
+        <strong>DevOps Tools:</strong>
+        GitLab CI/CD, GitHub Actions
+      </div>
     </div>
   </div>
 </template>
@@ -257,7 +261,6 @@ body {
     margin: auto;
   }
 }
-
 
 .photo {
   width: 200px;
@@ -351,11 +354,6 @@ hr {
   .dark-mode & {
     border-color: #333;
   }
-}
-
-.skill {
-  margin-right: 1em;
-  display: inline-block;
 }
 
 h2 {
