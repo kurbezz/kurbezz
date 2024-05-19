@@ -105,6 +105,7 @@ function switchTheme() {
         <ul>
           <li>Led planning, mentoring, and code reviews.</li>
           <li>Managed and streamlined software development, testing, and deployment processes.</li>
+          <li>Implemented Agile methodologies to improve team productivity.</li>
         </ul>
 
         <br>
