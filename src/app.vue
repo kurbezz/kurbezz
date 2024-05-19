@@ -82,7 +82,7 @@ function switchTheme() {
         <span class="text-large">Responsibilities:</span>
         <ul>
           <li>Developed services using Django and FastAPI.</li>
-          <li>Worked with PostgreSQL, Redis, RabbitMQ, Docker, and Amazon Web Services (AWS).</li>
+          <li>Worked with PostgreSQL (PL/pgSQL), Redis, RabbitMQ, Docker, and Amazon Web Services (AWS).</li>
           <li>Authored a library using Rust.</li>
           <li>Wrote unit and integration tests using Pytest.</li>
         </ul>
@@ -211,6 +211,36 @@ function switchTheme() {
       <div>
         <strong>DevOps Tools:</strong>
         GitLab CI/CD, GitHub Actions
+      </div>
+    </div>
+    <br>
+    <div>
+      <h2>Projects</h2>
+
+      <div>
+        <strong>Text Image Drawer</strong>
+        <br>
+        <strong>Speechki</strong>
+        <br>
+        <span><strong>Description:</strong> Wrote a library for drawing text on images using Rust.</span>
+        <br>
+        <span><strong>Technologies:</strong> Rust, Python, HarfBuzz</span>
+        <br>
+        <span><strong>Result:</strong> Accelerated image creation with text by 40 times. Excellent support for languages such as Indic, Arabic, Thai and Lao, Khmer, Myanmar, Tibetan, Hangul, Hebrew, and many others.</span>
+      </div>
+
+      <br>
+
+      <div>
+        <strong>Insulin Pump Management Application and Backend</strong>
+        <br>
+        <strong>ДИА.ЛОГ</strong>
+        <br>
+        <span><strong>Description:</strong>Developed an application and backend for managing an insulin pump based on the <a href="https://openaps.org/">OpenAPS</a> project.</span>
+        <br>
+        <span><strong>Technologies:</strong> Flask, Android, Kotlin</span>
+        <br>
+        <span><strong>Result:</strong> Improved the quality of life for people with diabetes.</span>
       </div>
     </div>
   </div>
@@ -379,6 +409,14 @@ h2 {
 
   .dark-mode & .sun {
     display: none;
+  }
+}
+
+a {
+  color: black;
+
+  .dark-mode & {
+    color: white;
   }
 }
 </style>
