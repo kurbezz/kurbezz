@@ -269,7 +269,7 @@ body {
   margin: auto;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 825px) {
   .app {
     padding: 2em;
   }
@@ -286,7 +286,7 @@ body {
   align-self: center;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 825px) {
   .photo-wrapper  {
     margin: auto;
   }
@@ -304,7 +304,7 @@ body {
   flex-direction: column;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 825px) {
   .name-and-social  {
     padding: 1em 0em 2em 0em;
   }
