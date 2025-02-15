@@ -6,7 +6,16 @@ let darkMode = ref(false);
 if (process.browser) {
   document.title = "Bulat Kurbanov - Backend Developer";
 
-  if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+  const localStorageDarkMode = localStorage.getItem("darkMode");
+
+  if (localStorageDarkMode !== null) {
+    if (localStorageDarkMode === "true") {
+      document.body.classList.add("dark-mode");
+      darkMode.value = true;
+    } else {
+      document.body.classList.add("light-mode");
+    }
+  } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
     document.body.classList.add("dark-mode");
     darkMode.value = true;
   } else {
@@ -19,6 +28,24 @@ function switchTheme() {
 
   document.body.classList.toggle("light-mode");
   document.body.classList.toggle("dark-mode");
+
+  localStorage.setItem("darkMode", darkMode.value);
+}
+
+function getExpFromJun2024(fromDate) {
+  const jun2024 = new Date(fromDate);
+  const now = new Date();
+
+  const deltaMonths = now.getMonth() - jun2024.getMonth() + 1;
+  const deltaYears = now.getFullYear() - jun2024.getFullYear();
+
+  const years = deltaMonths < 0 ? deltaYears - 1 : deltaYears;
+  const months = deltaMonths >= 0 ? deltaMonths : 12 + deltaMonths;
+
+  let yrsPart = years > 0 ? `${years} yrs` : "";
+  let mosPart = months > 0 ? ` ${months} mos` : "";
+
+  return `${yrsPart}${mosPart}`;
 }
 </script>
 
@@ -29,36 +56,34 @@ function switchTheme() {
       <img v-show="!darkMode" src="/public/icons/sun.svg" alt="light swither dark off" style="width: 100%; border-radius: 10px;">
     </div>
     <div class="header">
-      <div class="photo-wrapper">
-        <img class="photo" src="public/avatar.jpg" alt="avatar"/>
-      </div>
-
       <div class="name-and-social">
-        <div class="name">Bulat Kurbanov</div>
-
-        <div class="profession">Backend Developer</div>
-
-        <div class="email">
-          <a href="mailto:me@kurbezz.me">
-            <img v-show="darkMode" src="public/icons/mail-dark.svg" alt="email"/>
-            <img v-show="!darkMode" src="public/icons/mail.svg" alt="email"/>
-            <div>me@kurbezz.me</div>
-          </a>
+        <div>
+          <div class="name">Bulat Kurbanov</div>
+          <div class="profession">Backend Developer</div>
         </div>
+        <div>
+          <div class="email">
+            <a href="mailto:me@kurbezz.me">
+              <img v-show="darkMode" src="public/icons/mail-dark.svg" alt="email"/>
+              <img v-show="!darkMode" src="public/icons/mail.svg" alt="email"/>
+              <div>me@kurbezz.me</div>
+            </a>
+          </div>
 
-        <div class="social-links">
-          <a href="https://t.me/kurbezz">
-            <img v-show="darkMode" src="~public/icons/telegram-dark.svg" alt="telegram"/>
-            <img v-show="!darkMode" src="~public/icons/telegram.svg" alt="telegram"/>
-          </a>
-          <a href="https://github.com/kurbezz">
-            <img v-show="darkMode" src="~public/icons/github-dark.svg" alt="github"/>
-            <img v-show="!darkMode" src="~public/icons/github.svg" alt="github"/>
-          </a>
-          <a href="https://www.linkedin.com/in/bulat-kurbanov-1089ab146/">
-            <img v-show="darkMode" src="~public/icons/linkedin-dark.svg" alt="linkedin"/>
-            <img v-show="!darkMode" src="~public/icons/linkedin.svg" alt="linkedin"/>
-          </a>
+          <div class="social-links">
+            <a href="https://t.me/kurbezz">
+              <img v-show="darkMode" src="~public/icons/telegram-dark.svg" alt="telegram"/>
+              <img v-show="!darkMode" src="~public/icons/telegram.svg" alt="telegram"/>
+            </a>
+            <a href="https://github.com/kurbezz">
+              <img v-show="darkMode" src="~public/icons/github-dark.svg" alt="github"/>
+              <img v-show="!darkMode" src="~public/icons/github.svg" alt="github"/>
+            </a>
+            <a href="https://www.linkedin.com/in/bulat-kurbanov-1089ab146/">
+              <img v-show="darkMode" src="~public/icons/linkedin-dark.svg" alt="linkedin"/>
+              <img v-show="!darkMode" src="~public/icons/linkedin.svg" alt="linkedin"/>
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -70,6 +95,29 @@ function switchTheme() {
     <br>
     <div>
       <h2>Experience</h2>
+
+      <div>
+        <span>Spines · Full-time</span>
+        <br>
+        <strong class="text-large">Full Stack Developer</strong>
+        <br>
+        <span class="text-small">Jun 2024 - Present · {{ getExpFromJun2024("2024-06-01") }}</span>
+        <br>
+        <br>
+        <span class="text-large">Responsibilities:</span>
+        <ul>
+          <li>Design and optimize architectural solutions for a service using React and Node.js,
+            improving performance and maintainability.</li>
+          <li>Develop new microservices with FastAPI, ensuring scalability and efficiency.</li>
+          <li>Maintain and enhance existing services built with Django and FastAPI,
+            optimizing code quality and performance.</li>
+          <li>Successfully orchestrated the migration of all services and data from AWS to Azure,
+            achieving minimal downtime and ensuring system stability.</li>
+          <li>Improve CI/CD pipelines and infrastructure to enhance deployment speed and reliability.</li>
+        </ul>
+      </div>
+      <br>
+      <hr>
 
       <div>
         <span>Speechki · Full-time</span>
@@ -148,7 +196,7 @@ function switchTheme() {
       <br>
 
       <div>
-        <span>ДИА.ЛОГ · Part-time</span>
+        <span>DIA.LOG · Part-time</span>
         <br>
         <strong class="text-large">Software Developer</strong>
         <br>
@@ -181,47 +229,47 @@ function switchTheme() {
     <br>
     <div>
       <h2>Technologies and Tools</h2>
-      <div>
+      <div class="technology-list">
         <strong>Programming Languages:</strong>
-        Python (Expert), Rust (Beginner)
+        Python (Expert), Rust (Advanced)
       </div>
-      <div>
+      <div class="technology-list">
         <strong>Frameworks:</strong>
-        Django (Expert), Django REST Framework (DRF) (Advanced), FastAPI (Advanced)
+        Django (Expert), Django REST Framework (DRF) (Expert), FastAPI (Advanced)
       </div>
-      <div>
+      <div class="technology-list">
         <strong>Testing:</strong>
         Pytest (Advanced)
       </div>
-      <div>
+      <div class="technology-list">
         <strong>Databases:</strong>
         PostgreSQL (Advanced), Redis (Intermediate)
       </div>
-      <div>
+      <div class="technology-list">
         <strong>Messaging and Queues:</strong>
         RabbitMQ (Intermediate)
       </div>
-      <div>
+      <div class="technology-list">
         <strong>Containerization and Orchestration:</strong>
         Docker (Advanced), Docker Swarm (Intermediate)
       </div>
-      <div>
+      <div class="technology-list">
         <strong>Cloud Technologies:</strong>
         Amazon Web Services (AWS) (Intermediate)
       </div>
-      <div>
+      <div class="technology-list">
         <strong>DevOps Tools:</strong>
         GitLab CI/CD, GitHub Actions
       </div>
     </div>
+
     <br>
+
     <div>
       <h2>Projects</h2>
 
-      <div>
-        <strong>Text Image Drawer</strong>
-        <br>
-        <strong>Speechki</strong>
+      <div class="project">
+        <strong class="project-name">Image Drawer</strong><span> · Speechki</span>
         <br>
         <span><strong>Description:</strong> Wrote a library for drawing text on images using Rust.</span>
         <br>
@@ -232,10 +280,8 @@ function switchTheme() {
 
       <br>
 
-      <div>
-        <strong>Insulin Pump Management Application and Backend</strong>
-        <br>
-        <strong>ДИА.ЛОГ</strong>
+      <div class="project">
+        <strong class="project-name">Insulin Pump Management Application and Backend</strong><span> · DIA.LOG</span>
         <br>
         <span><strong>Description:</strong>Developed an application and backend for managing an insulin pump based on the <a href="https://openaps.org/">OpenAPS</a> project.</span>
         <br>
@@ -246,10 +292,8 @@ function switchTheme() {
 
       <br>
 
-      <div>
-        <strong>Internal Logistic Management System</strong>
-        <br>
-        <strong>CS GROUP</strong>
+      <div class="project">
+        <strong class="project-name">Internal Logistic Management System</strong><span> · CS GROUP</span>
         <br>
         <span><strong>Description:</strong> Developed a system for automating internal logistics within the company. The system allows tracking order status, managing warehouse inventory, and handling accounting.</span>
         <br>
@@ -260,10 +304,8 @@ function switchTheme() {
 
       <br>
 
-      <div>
-        <strong>Mobile Application for Drivers</strong>
-        <br>
-        <strong>CS GROUP</strong>
+      <div class="project">
+        <strong class="project-name">Mobile Application for Drivers</strong><span> · CS GROUP</span>
         <br>
         <span><strong>Description:</strong> Developed a mobile application for drivers to manage routes and order statuses.</span>
         <br>
@@ -274,10 +316,8 @@ function switchTheme() {
 
       <br>
 
-      <div>
-        <strong>Internal Order Managment System</strong>
-        <br>
-        <strong>Zarnitza</strong>
+      <div class="project">
+        <strong class="project-name">Internal Order Managment System</strong><span> · Zarnitza</span>
         <br>
         <span><strong>Description:</strong> Developed a system for managing orders and sales.</span>
         <br>
@@ -297,8 +337,6 @@ function switchTheme() {
 </style>
 
 <style scoped>
-
-
 body {
   background-color: var(--color-primary);
   color: var(--color-secondary);
@@ -325,27 +363,14 @@ body {
   justify-content: flex-start;
 }
 
-.photo-wrapper {
-  align-self: center;
-}
-
-@media only screen and (max-width: 825px) {
-  .photo-wrapper  {
-    margin: auto;
-  }
-}
-
-.photo {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  padding-right: 1em;
-}
-
 .name-and-social {
-  padding: 2em 3em 3em 5em;
+  padding: 2em 0em 3em 0em;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
 
 @media only screen and (max-width: 825px) {
@@ -361,13 +386,12 @@ body {
 
 .profession {
   font-size: 2em;
-
-  margin-bottom: 1em;
 }
 
 .email {
   width: 100%;
   display: flex;
+  padding-top: 0.5rem;
 }
 
 .email > a {
@@ -461,6 +485,24 @@ a {
 
   .dark-mode & {
     color: white;
+  }
+}
+
+.technology-list {
+  line-height: 1.2;
+}
+
+.project {
+  .project-name {
+    font-size: 1.1em;
+  }
+
+  strong {
+    line-height: 1.2;
+  }
+
+  span {
+    line-height: 1.2;
   }
 }
 </style>
