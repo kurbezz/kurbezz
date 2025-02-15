@@ -53,7 +53,7 @@ const PROJECTS = [
     "name": "ChatGPT voiceover plugin",
     "company": "Speechki",
     "description": "Developed a plugin for ChatGPT that converts text to speech using the Speechki API.",
-    "technologies": "Python, FastAPI",
+    "technologies": "Python, FastAPI, SQLAchemy, Vue",
     "result": "Quickly launched a B2C service and integrated it with ChatGPT, which became one of the first 15 third-party plugins presented in the ChatGPT plugin store."
   },
   {
