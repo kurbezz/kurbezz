@@ -143,7 +143,7 @@ const PROJECTS = [
     <div>
       <h2 class="block-header">Experience</h2>
 
-      <div>
+      <div class="page-break-avoid">
         <span>Spines · Full-time</span>
         <br>
         <strong class="text-large">Full Stack Developer</strong>
@@ -158,15 +158,14 @@ const PROJECTS = [
           <li>Develop new microservices with FastAPI, ensuring scalability and efficiency.</li>
           <li>Maintain and enhance existing services built with Django and FastAPI,
             optimizing code quality and performance.</li>
-          <li>Successfully orchestrated the migration of all services and data from AWS to Azure,
-            achieving minimal downtime and ensuring system stability.</li>
           <li>Improve CI/CD pipelines and infrastructure to enhance deployment speed and reliability.</li>
+          <li>Orchestrated the end-to-end migration of services and data from AWS to Azure, achieving minimal downtime and ensuring system stability.</li>
         </ul>
       </div>
       <br>
       <hr>
 
-      <div>
+      <div class="page-break-avoid">
         <span>Speechki · Full-time</span>
         <br>
         <strong class="text-large">Python Backend Developer</strong>
@@ -176,9 +175,9 @@ const PROJECTS = [
         <br>
         <span class="text-large">Responsibilities:</span>
         <ul>
-          <li>Developed services using Django and FastAPI.</li>
+          <li>Developed and maintained backend services using Django and FastAPI.</li>
           <li>Worked with PostgreSQL (PL/pgSQL), Redis, RabbitMQ, Docker, and Amazon Web Services (AWS).</li>
-          <li>Authored a library using Rust.</li>
+          <li>Authored a high-performance library in Rust for Python applications.</li>
           <li>Wrote unit and integration tests using Pytest.</li>
         </ul>
       </div>
@@ -187,7 +186,7 @@ const PROJECTS = [
 
       <br>
 
-      <div>
+      <div class="page-break-avoid">
         <span>CS GROUP · Full-time</span>
         <br>
 
@@ -198,9 +197,9 @@ const PROJECTS = [
         <br>
         <span class="text-large">Responsibilities:</span>
         <ul>
-          <li>Led planning, mentoring, and code reviews.</li>
-          <li>Managed and streamlined software development, testing, and deployment processes.</li>
-          <li>Implemented Agile methodologies to improve team productivity.</li>
+          <li>Led project planning, team mentoring, and code reviews to ensure high-quality development.</li>
+          <li>Managed and optimized software development, testing, and deployment workflows.</li>
+          <li>Implemented Agile methodologies, increasing team productivity and collaboration.</li>
         </ul>
 
         <br>
@@ -212,19 +211,19 @@ const PROJECTS = [
         <br>
         <span class="text-large">Responsibilities:</span>
         <ul>
-          <li>Developed backend services using Django and Django REST Framework.</li>
-          <li>Created frontend components with Vue.js.</li>
-          <li>Built a mobile application using Flutter and Dart.</li>
-          <li>Implemented automated CI/CD pipelines using GitLab CI/CD and GitHub Actions.</li>
-          <li>Utilized PostgreSQL, Redis, RabbitMQ, and Docker.</li>
-          <li>Wrote unit and integration tests using Pytest.</li>
+          <li>Developed scalable backend services using Django and Django REST Framework.</li>
+          <li>Built responsive frontend components with Vue.js.</li>
+          <li>Developed and deployed a cross-platform mobile application using Flutter and Dart.</li>
+          <li>Designed and implemented automated CI/CD pipelines using GitLab CI/CD and GitHub Actions.</li>
+          <li>Worked with PostgreSQL, Redis, RabbitMQ, and Docker to enhance system performance.</li>
+          <li>Designed and maintained unit and integration tests using Pytest, ensuring code reliability.</li>
         </ul>
       </div>
       <br>
       <hr>
       <br>
 
-      <div>
+      <div class="page-break-avoid">
         <span>Zarnitza · Full-time</span>
         <br>
         <strong class="text-large">Full Stack Developer</strong>
@@ -234,15 +233,16 @@ const PROJECTS = [
         <br>
         <span class="text-large">Responsibilities:</span>
         <ul>
-          <li>Developed backend services using Django and Django REST Framework.</li>
-          <li>Worked with PostgreSQL.</li>
+          <li>Developed and maintained backend services using Django and Django REST Framework.</li>
+          <li>Designed and optimized database schemas in PostgreSQL to improve performance and scalability.</li>
+          <li>Developed frontend components and user interfaces using JavaScript and Vue.js.</li>
         </ul>
       </div>
       <br>
       <hr>
       <br>
 
-      <div>
+      <div class="page-break-avoid">
         <span>DIA.LOG · Part-time</span>
         <br>
         <strong class="text-large">Software Developer</strong>
@@ -252,13 +252,13 @@ const PROJECTS = [
         <br>
         <span class="text-large">Responsibilities:</span>
         <ul>
-          <li>Developed backend services using Flask.</li>
-          <li>Created an Android application.</li>
+          <li>Developed and maintained backend service using Flask.</li>
+          <li>Designed and built an Android application using Java/Kotlin.</li>
         </ul>
       </div>
     </div>
 
-    <div>
+    <div class="page-break-avoid">
       <h2 class="block-header">Technologies and Tools</h2>
       <div class="technology-list">
         <strong>Programming Languages:</strong>
@@ -297,7 +297,7 @@ const PROJECTS = [
     <div>
       <h2 class="block-header">Projects</h2>
 
-      <div class="projects">
+      <div class="projects page-break-avoid">
         <div v-for="project in PROJECTS" class="project">
           <strong class="project-name">{{ project.name }}</strong><span> · {{  project.company  }}</span>
           <br>
@@ -310,7 +310,7 @@ const PROJECTS = [
       </div>
     </div>
 
-    <div>
+    <div class="page-break-avoid">
       <h2 class="block-header">Education</h2>
       <div>
         <strong class="text-large">Bachelor of Engineering - BE, Computational and Applied Mathematics</strong>
@@ -344,6 +344,10 @@ body {
   padding: 4em;
   max-width: 800px;
   margin: auto;
+
+  @media print {
+    padding: 0 !important;
+  }
 }
 
 @media only screen and (max-width: 825px) {
@@ -380,12 +384,12 @@ body {
 }
 
 .name {
-  font-size: 3em;
+  font-size: 2.5em;
   font-weight: bold;
 }
 
 .profession {
-  font-size: 2em;
+  font-size: 1.8em;
 }
 
 .email {
@@ -523,4 +527,9 @@ a {
 .block-header {
   padding-top: 1em;
 }
+
+.page-break-avoid {
+    width: 100%;
+    page-break-inside: avoid;
+  }
 </style>
