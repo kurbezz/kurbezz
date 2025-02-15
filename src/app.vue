@@ -47,6 +47,52 @@ function getExpFromJun2024(fromDate) {
 
   return `${yrsPart}${mosPart}`;
 }
+
+const PROJECTS = [
+  {
+    "name": "ChatGPT voiceover plugin",
+    "company": "Speechki",
+    "description": "Developed a plugin for ChatGPT that converts text to speech using the Speechki API.",
+    "technologies": "Python, FastAPI",
+    "result": "Quickly launched a B2C service and integrated it with ChatGPT, which became one of the first 15 third-party plugins presented in the ChatGPT plugin store."
+  },
+  {
+    "name": "Image Text Drawing Library",
+    "company": "Speechki",
+    "description": "Wrote a library for drawing text on images using Rust.",
+    "technologies": "Rust, Python, HarfBuzz",
+    "result": "Accelerated image creation with text by 40 times. Excellent support for languages such as Indic, Arabic, Thai and Lao, Khmer, Myanmar, Tibetan, Hangul, Hebrew, and many others."
+  },
+  {
+    "name": "Insulin Pump Management Application and Backend",
+    "company": "DIA.LOG",
+    "description": "Developed an application and backend for managing an insulin pump based on the OpenAPS project.",
+    "technologies": "Flask, Java, Kotlin",
+    "result": "Improved the quality of life for people with diabetes."
+  },
+  {
+    "name": "Internal Logistic Management System",
+    "company": "CS GROUP",
+    "description": "Developed a system for automating internal logistics within the company. The system allows tracking order status, managing warehouse inventory, and handling accounting.",
+    "technologies": "Django, DRF, Vue, PostgreSQL",
+    "result": "Reduced order processing time, improved reporting, and enhanced inventory control."
+  },
+  {
+    "name": "Mobile Application for Drivers",
+    "company": "CS GROUP",
+    "description": "Developed a mobile application for drivers to manage routes and order statuses.",
+    "technologies": "Flutter, Dart",
+    "result": "Automated the process of managing order statuses and routes within the company."
+  },
+  {
+    "name": "Internal Order Managment System",
+    "company": "Zarnitza",
+    "description": "Developed a system for managing orders and sales.",
+    "technologies": "Django, PostgreSQL",
+    "result": "Reduced the number of late order shipments by 30%."
+  },
+]
+
 </script>
 
 <template>
@@ -55,6 +101,7 @@ function getExpFromJun2024(fromDate) {
       <img v-show="darkMode" src="/public/icons/moon.svg" alt="light switcher darn on" style="width: 100%; border-radius: 10px;"/>
       <img v-show="!darkMode" src="/public/icons/sun.svg" alt="light swither dark off" style="width: 100%; border-radius: 10px;">
     </div>
+
     <div class="header">
       <div class="name-and-social">
         <div>
@@ -71,17 +118,17 @@ function getExpFromJun2024(fromDate) {
           </div>
 
           <div class="social-links">
-            <a href="https://t.me/kurbezz">
-              <img v-show="darkMode" src="~public/icons/telegram-dark.svg" alt="telegram"/>
-              <img v-show="!darkMode" src="~public/icons/telegram.svg" alt="telegram"/>
+            <a href="https://www.linkedin.com/in/bulat-kurbanov-1089ab146/">
+              <img v-show="darkMode" src="~public/icons/linkedin-dark.svg" alt="linkedin"/>
+              <img v-show="!darkMode" src="~public/icons/linkedin.svg" alt="linkedin"/>
             </a>
             <a href="https://github.com/kurbezz">
               <img v-show="darkMode" src="~public/icons/github-dark.svg" alt="github"/>
               <img v-show="!darkMode" src="~public/icons/github.svg" alt="github"/>
             </a>
-            <a href="https://www.linkedin.com/in/bulat-kurbanov-1089ab146/">
-              <img v-show="darkMode" src="~public/icons/linkedin-dark.svg" alt="linkedin"/>
-              <img v-show="!darkMode" src="~public/icons/linkedin.svg" alt="linkedin"/>
+            <a href="https://t.me/kurbezz">
+              <img v-show="darkMode" src="~public/icons/telegram-dark.svg" alt="telegram"/>
+              <img v-show="!darkMode" src="~public/icons/telegram.svg" alt="telegram"/>
             </a>
           </div>
         </div>
@@ -89,12 +136,12 @@ function getExpFromJun2024(fromDate) {
     </div>
 
     <div>
-      <h2>About me</h2>
+      <h2 class="block-header">About me</h2>
       Backend Developer with 7 years of experience in web development, specializing in RESTful APIs, database management, and test-driven development. Committed to continuous self-improvement and active open-source contributor.
     </div>
-    <br>
+
     <div>
-      <h2>Experience</h2>
+      <h2 class="block-header">Experience</h2>
 
       <div>
         <span>Spines · Full-time</span>
@@ -122,7 +169,7 @@ function getExpFromJun2024(fromDate) {
       <div>
         <span>Speechki · Full-time</span>
         <br>
-        <strong class="text-large">Senior Python Backend Developer</strong>
+        <strong class="text-large">Python Backend Developer</strong>
         <br>
         <span class="text-small">Sep 2021 - Apr 2024 · 2 yrs 8 mos</span>
         <br>
@@ -209,26 +256,10 @@ function getExpFromJun2024(fromDate) {
           <li>Created an Android application.</li>
         </ul>
       </div>
-      <br>
-      <hr>
-      <br>
     </div>
 
     <div>
-      <h2>Education</h2>
-      <div>
-        <strong class="text-large">Bachelor of Engineering - BE, Computational and Applied Mathematics</strong>
-        <br>
-        <span>Kazan National Research Technical University named after A. N. Tupolev - KAI</span>
-        <br>
-        <span class="text-small">2016 - 2018</span>
-        <br>
-        <strong class="text-small">Grade: Incompleted</strong>
-      </div>
-    </div>
-    <br>
-    <div>
-      <h2>Technologies and Tools</h2>
+      <h2 class="block-header">Technologies and Tools</h2>
       <div class="technology-list">
         <strong>Programming Languages:</strong>
         Python (Expert), Rust (Advanced)
@@ -263,67 +294,32 @@ function getExpFromJun2024(fromDate) {
       </div>
     </div>
 
-    <br>
+    <div>
+      <h2 class="block-header">Projects</h2>
+
+      <div class="projects">
+        <div v-for="project in PROJECTS" class="project">
+          <strong class="project-name">{{ project.name }}</strong><span> · {{  project.company  }}</span>
+          <br>
+          <span><strong>Description:</strong> {{ project.description }}</span>
+          <br>
+          <span><strong>Technologies:</strong> {{ project.technologies }}</span>
+          <br>
+          <span><strong>Result:</strong> {{ project.result }}</span>
+        </div>
+      </div>
+    </div>
 
     <div>
-      <h2>Projects</h2>
-
-      <div class="project">
-        <strong class="project-name">Image Drawer</strong><span> · Speechki</span>
+      <h2 class="block-header">Education</h2>
+      <div>
+        <strong class="text-large">Bachelor of Engineering - BE, Computational and Applied Mathematics</strong>
         <br>
-        <span><strong>Description:</strong> Wrote a library for drawing text on images using Rust.</span>
+        <span>Kazan National Research Technical University named after A. N. Tupolev - KAI</span>
         <br>
-        <span><strong>Technologies:</strong> Rust, Python, HarfBuzz</span>
+        <span class="text-small">2016 - 2018</span>
         <br>
-        <span><strong>Result:</strong> Accelerated image creation with text by 40 times. Excellent support for languages such as Indic, Arabic, Thai and Lao, Khmer, Myanmar, Tibetan, Hangul, Hebrew, and many others.</span>
-      </div>
-
-      <br>
-
-      <div class="project">
-        <strong class="project-name">Insulin Pump Management Application and Backend</strong><span> · DIA.LOG</span>
-        <br>
-        <span><strong>Description:</strong>Developed an application and backend for managing an insulin pump based on the <a href="https://openaps.org/">OpenAPS</a> project.</span>
-        <br>
-        <span><strong>Technologies:</strong> Flask, Java, Kotlin</span>
-        <br>
-        <span><strong>Result:</strong> Improved the quality of life for people with diabetes.</span>
-      </div>
-
-      <br>
-
-      <div class="project">
-        <strong class="project-name">Internal Logistic Management System</strong><span> · CS GROUP</span>
-        <br>
-        <span><strong>Description:</strong> Developed a system for automating internal logistics within the company. The system allows tracking order status, managing warehouse inventory, and handling accounting.</span>
-        <br>
-        <span><strong>Technologies:</strong> Django, DRF, Vue, PostgreSQL</span>
-        <br>
-        <span><strong>Result:</strong> Reduced order processing time, improved reporting, and enhanced inventory control.</span>
-      </div>
-
-      <br>
-
-      <div class="project">
-        <strong class="project-name">Mobile Application for Drivers</strong><span> · CS GROUP</span>
-        <br>
-        <span><strong>Description:</strong> Developed a mobile application for drivers to manage routes and order statuses.</span>
-        <br>
-        <span><strong>Technologies:</strong> Flutter, Dart</span>
-        <br>
-        <span><strong>Result:</strong> Automated the process of managing order statuses and routes within the company.</span>
-      </div>
-
-      <br>
-
-      <div class="project">
-        <strong class="project-name">Internal Order Managment System</strong><span> · Zarnitza</span>
-        <br>
-        <span><strong>Description:</strong> Developed a system for managing orders and sales.</span>
-        <br>
-        <span><strong>Technologies:</strong> Django, PostgreSQL</span>
-        <br>
-        <span><strong>Result:</strong> Reduced the number of late order shipments by 30%.</span>
+        <strong class="text-small">Grade: Incompleted</strong>
       </div>
     </div>
   </div>
@@ -364,13 +360,17 @@ body {
 }
 
 .name-and-social {
-  padding: 2em 0em 3em 0em;
+  padding: 2em 0em 0em 0em;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   width: 100%;
+
+  @media print {
+    padding: 0;
+  }
 }
 
 @media only screen and (max-width: 825px) {
@@ -419,6 +419,10 @@ body {
   font-size: 1.5em;
   display: flex;
   flex-wrap: wrap;
+
+  @media print {
+    display: none;
+  }
 }
 
 .social-links > a {
@@ -478,6 +482,10 @@ h2 {
   .dark-mode & .sun {
     display: none;
   }
+
+  @media print {
+    display: none;
+  }
 }
 
 a {
@@ -492,6 +500,12 @@ a {
   line-height: 1.2;
 }
 
+.projects {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
 .project {
   .project-name {
     font-size: 1.1em;
@@ -504,5 +518,9 @@ a {
   span {
     line-height: 1.2;
   }
+}
+
+.block-header {
+  padding-top: 1em;
 }
 </style>
